@@ -11,7 +11,8 @@ import (
 )
 
 func main() {
-	logger.SetFlags(logger.Lshortfile)
+	// Use full timestamp in logs for easier debugging in local dev
+	logger.SetFlags(logger.Ldate | logger.Ltime | logger.Lshortfile)
 
 	configFile := pflag.String("config", "", "path to config file")
 	showVersion := pflag.Bool("version", false, "print version string")
